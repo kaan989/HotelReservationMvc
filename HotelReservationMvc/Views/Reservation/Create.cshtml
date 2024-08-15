@@ -1,0 +1,48 @@
+﻿@using HotelReservationMvc.ViewModel
+@model CreateReservationViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-action="Create" method="post" class="bg-light p-4 rounded shadow-sm">
+   
+    <div class="form-group mb-3">
+        <label asp-for="CustomerId" class="form-label"></label>
+        <select asp-for="CustomerId" class="form-select" asp-items="@ViewBag.Customers">
+            <option value="">Select a Customer</option>
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="RoomId" class="form-label"></label>
+        <select asp-for="RoomId" class="form-select" asp-items="@ViewBag.Rooms">
+            <option value="">Select a Room</option>
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="CheckInDate" class="form-label"></label>
+        <input asp-for="CheckInDate" class="form-control" type="date" />
+        <div class="invalid-feedback">
+            <span asp-validation-for="CheckInDate"></span>
+        </div>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="CheckOutDate" class="form-label"></label>
+        <input asp-for="CheckOutDate" class="form-control" type="date" />
+        <div class="invalid-feedback">
+            <span asp-validation-for="CheckOutDate"></span>
+        </div>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="TotalPrice" class="form-label">Total Price</label>
+        <input asp-for="TotalPrice" class="form-control" type="number" step="0.01" / disabled>
+    </div>
+
+    <div class="form-group mt-4">
+        <button type="submit" class="btn btn-primary btn-lg">Create Reservation</button>
+    </div>
+</form>

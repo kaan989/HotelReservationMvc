@@ -1,55 +1,63 @@
 ﻿@using HotelReservationMvc.ViewModel
 @model CreateCustomerViewModel
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
 @{
+    // Page title
 }
+
 <h2>Create Customer</h2>
 
 <form asp-action="Create" method="post">
+    <!-- First Name input field -->
     <div class="form-group">
         <label asp-for="FirstName" class="control-label"></label>
         <input asp-for="FirstName" class="form-control" />
         <span asp-validation-for="FirstName" class="text-danger"></span>
     </div>
 
+    <!-- Last Name input field -->
     <div class="form-group">
         <label asp-for="LastName" class="control-label"></label>
         <input asp-for="LastName" class="form-control" />
         <span asp-validation-for="LastName" class="text-danger"></span>
     </div>
 
+    <!-- Email input field -->
     <div class="form-group">
         <label asp-for="Email" class="control-label"></label>
         <input asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
+    <!-- Phone Number input field -->
     <div class="form-group">
         <label asp-for="PhoneNumber" class="control-label"></label>
         <input asp-for="PhoneNumber" class="form-control" />
         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
     </div>
 
+    <!-- Address input field -->
     <div class="form-group">
         <label asp-for="Address" class="control-label"></label>
         <input asp-for="Address" class="form-control" />
         <span asp-validation-for="Address" class="text-danger"></span>
     </div>
 
+    <!-- Submit button -->
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
-
 </form>
 
+<!-- Back to customer list button -->
 <div>
     <a href="@Url.Action("Index", "Customer")" class="btn btn-secondary">
         <i class="fas fa-arrow-left"></i> Back to List
     </a>
 </div>
+
 @section Scripts {
+    <!-- Include validation scripts -->
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

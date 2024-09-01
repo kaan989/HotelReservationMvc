@@ -1,6 +1,8 @@
-﻿namespace HotelReservationMvc.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace HotelReservationMvc.Models
 {
-    public class AppUser
+    public class AppUser : IdentityUser
     {
     }
 }

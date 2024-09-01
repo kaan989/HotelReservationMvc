@@ -1,9 +1,10 @@
 ﻿using HotelReservationMvc.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservationMvc.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
         {
@@ -20,9 +21,9 @@ namespace HotelReservationMvc.Data
             modelBuilder.Entity<ReservationService>()
                 .HasKey(rs => new { rs.ReservationId, rs.ServiceId });
 
-            // Diğer model yapılandırmaları...
+            base.OnModelCreating(modelBuilder);
         }
 
-
+       
     }
 }

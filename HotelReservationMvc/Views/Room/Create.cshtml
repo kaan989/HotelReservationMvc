@@ -5,3 +5,42 @@
 *@
 @{
 }
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <!-- Room Number Field -->
+    <div class="mb-3">
+        <label asp-for="RoomNumber" class="form-label">Room Number</label>
+        <input asp-for="RoomNumber" class="form-control" placeholder="Enter Room Number">
+        <span asp-validation-for="RoomNumber" class="text-danger"></span>
+    </div>
+
+    <!-- Description Field -->
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Enter Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <!-- Capacity Field -->
+    <div class="mb-3">
+        <label asp-for="Capacity" class="form-label">Capacity</label>
+        <input asp-for="Capacity" class="form-control" placeholder="Enter Capacity">
+        <span asp-validation-for="Capacity" class="text-danger"></span>
+    </div>
+
+    <!-- Price Per Night Field -->
+    <div class="mb-3">
+        <label asp-for="PricePerNight" class="form-label">Price Per Night</label>
+        <input asp-for="PricePerNight" class="form-control" placeholder="Enter Price Per Night">
+        <span asp-validation-for="PricePerNight" class="text-danger"></span>
+    </div>
+
+    <!-- Image Upload Field -->
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Image</label>
+        <input asp-for="Image" type="file" class="form-control">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

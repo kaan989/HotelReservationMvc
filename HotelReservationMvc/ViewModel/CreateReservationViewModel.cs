@@ -19,6 +19,7 @@ namespace HotelReservationMvc.ViewModel
 
         [Range(0, double.MaxValue, ErrorMessage = "Total Price must be a positive value.")]
         public decimal TotalPrice { get; set; }  // Toplam fiyat
+        public Room? Room { get; set; }
 
 
     }

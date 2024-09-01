@@ -4,39 +4,46 @@
 *@
 @{
 }
+
 <h2>Are you Sure Delete This Customer?</h2>
 
 <form asp-action="Delete" method="post">
+    <!-- Display the customer's first name (disabled for confirmation view) -->
     <div class="form-group">
         <label asp-for="FirstName" class="control-label"></label>
         <input disabled asp-for="FirstName" class="form-control" />
         <span asp-validation-for="FirstName" class="text-danger"></span>
     </div>
 
+    <!-- Display the customer's last name (disabled for confirmation view) -->
     <div class="form-group">
         <label asp-for="LastName" class="control-label"></label>
         <input disabled asp-for="LastName" class="form-control" />
         <span asp-validation-for="LastName" class="text-danger"></span>
     </div>
 
+    <!-- Display the customer's email address (disabled for confirmation view) -->
     <div class="form-group">
         <label asp-for="Email" class="control-label"></label>
         <input disabled asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
 
+    <!-- Display the customer's phone number (disabled for confirmation view) -->
     <div class="form-group">
         <label asp-for="PhoneNumber" class="control-label"></label>
         <input disabled asp-for="PhoneNumber" class="form-control" />
         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
     </div>
 
+    <!-- Display the customer's address (disabled for confirmation view) -->
     <div class="form-group">
         <label asp-for="Address" class="control-label"></label>
         <input disabled asp-for="Address" class="form-control" />
         <span asp-validation-for="Address" class="text-danger"></span>
     </div>
 
+    <!-- Submit button to confirm deletion -->
     <div class="form-group">
         <input type="submit" value="Delete" class="btn btn-primary" />
     </div>
@@ -44,12 +51,15 @@
 </form>
 
 <div>
+    <!-- Link to return to the customer list -->
     <a href="@Url.Action("Index", "Customer")" class="btn btn-secondary">
         <i class="fas fa-arrow-left"></i> Back to List
     </a>
 </div>
+
 @section Scripts {
     @{
+        // Render the validation scripts partial view
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }

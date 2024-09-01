@@ -6,20 +6,25 @@
 }
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
+        <!-- Grid layout for displaying rooms -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
+                <!-- Card for each room -->
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" src="@item.Image" width="100%" height="225" alt="Car image cap">
+                        <!-- Room image -->
+                        <img class="bd-placeholder-img card-img-top" src="@item.Image" width="100%" height="225" alt="Room image">
                         <div class="card-body">
+                            <!-- Room number and description -->
                             <p class="card-text">@item.RoomNumber</p>
                             <p class="card-text">@item.Description</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
+                                    <!-- Link to view details of the room -->
                                     <a asp-controller="Room" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                 </div>
+                                <!-- Price per night -->
                                 <small class="text-body-secondary">@item.PricePerNight</small>
                             </div>
                         </div>

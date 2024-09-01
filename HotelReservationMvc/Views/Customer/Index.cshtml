@@ -4,9 +4,13 @@
 *@
 @{
 }
+
+<!-- Button to navigate to the Create Customer page -->
 <a href="@Url.Action("Create", "Customer")" class="btn btn-primary">
     <i class="fas fa-user-plus"></i> Add New Customer
 </a>
+
+<!-- Table to display the list of customers -->
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -16,8 +20,8 @@
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Address</th>
-            <th></th>
-            <th></th>
+            <th></th> <!-- Edit column -->
+            <th></th> <!-- Delete column -->
         </tr>
     </thead>
     <tbody>
@@ -33,11 +37,10 @@
                     <td>@customer.Email</td>
                     <td>@customer.PhoneNumber</td>
                     <td>@customer.Address</td>
+                    <!-- Edit button -->
                     <td><a asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.Id"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <!-- Delete button -->
                     <td><a asp-controller="Customer" asp-action="Delete" asp-route-id="@customer.Id"><i class="fa-solid fa-trash"></i></a></td>
-
-                
-                   
                 </tr>
                 index++;
             }
@@ -45,10 +48,8 @@
         else
         {
             <tr>
-                <td colspan="6" class="text-center">No customers found</td>
+                <td colspan="8" class="text-center">No customers found</td>
             </tr>
         }
-
-       
     </tbody>
 </table>

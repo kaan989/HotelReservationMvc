@@ -5,10 +5,10 @@
 @{
 }
 <div class="d-flex justify-content-between align-items-center mb-3">
-<h2 class="mb-0">Reservations</h2>
-<a href="@Url.Action("Create", "Reservation")" class="btn btn-primary btn-lg">
-    <i class="fas fa-plus"></i> Add Reservation
-</a>
+    <h2 class="mb-0">Reservations</h2>
+    <a href="@Url.Action("Create", "Reservation")" class="btn btn-primary btn-lg">
+        <i class="fas fa-plus"></i> Add Reservation
+    </a>
 </div>
 
 <table class="table table-striped table-hover">
@@ -20,8 +20,8 @@
             <th scope="col">Check-In Date</th>
             <th scope="col">Check-Out Date</th>
             <th scope="col">Total Price</th>
-            <th></th>
-            <th></th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -37,8 +37,8 @@
                     <td>@reservation.CheckInDate.ToShortDateString()</td>
                     <td>@reservation.CheckOutDate.ToShortDateString()</td>
                     <td>@reservation.TotalPrice.ToString("C")</td>
-                    <td><a asp-controller="Reservation" asp-action="Edit" asp-route-id="@reservation.Id"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td><a asp-controller="Reservation" asp-action="Delete" asp-route-id="@reservation.Id"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a asp-controller="Reservation" asp-action="Edit" asp-route-id="@reservation.Id" class="btn btn-warning btn-sm" aria-label="Edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a asp-controller="Reservation" asp-action="Delete" asp-route-id="@reservation.Id" class="btn btn-danger btn-sm" aria-label="Delete"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 index++;
             }
@@ -46,7 +46,7 @@
         else
         {
             <tr>
-                <td colspan="6" class="text-center">No reservations found</td>
+                <td colspan="8" class="text-center">No reservations found</td>
             </tr>
         }
     </tbody>

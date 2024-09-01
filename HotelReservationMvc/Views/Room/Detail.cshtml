@@ -6,27 +6,29 @@
 }
 <div class="container">
 
-    <!-- Portfolio Item Heading -->
+    <!-- Room Heading -->
     <h1 class="my-4">
-        Page Heading
-        <small>Secondary Text</small>
+        Room Number
+        <small>@Model.RoomNumber</small>
     </h1>
 
-    <!-- Portfolio Item Row -->
+    <!-- Room Details Row -->
     <div class="row">
 
+        <!-- Room Image Column -->
         <div class="col-md-8">
-            <img class="img-fluid" src="@Model.Image" alt="">
+            <img class="img-fluid" src="@Model.Image" alt="Room Image">
         </div>
 
+        <!-- Room Information Column -->
         <div class="col-md-4">
-            <h3 class="my-3">@Model.RoomNumber</h3>
-            <p>@Model.Description</p>
-            <h3 class="my-3">Location</h3>
+            <h3 class="my-3">Room Number @Model.RoomNumber</h3>
+            <p>Description: @Model.Description</p>
+            <h3 class="my-3">Others:</h3>
             <ul>
-                <li>@Model.Capacity</li>
-                <li>@Model.IsAvailable</li>
-                <li>@Model.PricePerNight</li>
+                <li>Capacity: @Model.Capacity</li>
+                <li>Is Available: @Model.IsAvailable</li>
+                <li>Price Per Night: @Model.PricePerNight</li>
             </ul>
         </div>
 
@@ -37,27 +39,28 @@
 
     <div class="row">
 
+        <!-- Placeholder for Related Images -->
         <div class="col-md-3 col-sm-6 mb-4">
             <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+                <img class="img-fluid" src="@Model.Image" alt="Related Image">
             </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
             <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+                <img class="img-fluid" src="@Model.Image" alt="Related Image">
             </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
             <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+                <img class="img-fluid" src="@Model.Image" alt="Related Image">
             </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
             <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
+                <img class="img-fluid" src="@Model.Image" alt="Related Image">
             </a>
         </div>
 
